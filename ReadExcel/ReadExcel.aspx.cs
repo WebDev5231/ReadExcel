@@ -9,6 +9,7 @@ using Dapper;
 using ReadExcel.Models;
 using System.Text;
 using System.Web.UI.WebControls;
+using System.Globalization;
 
 namespace ReadExcel
 {
@@ -149,7 +150,7 @@ namespace ReadExcel
                                     System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
                                     System.Threading.Thread.CurrentThread.CurrentCulture = culture;
 
-                                    var nomeCor = worksheet.Cells[row, 11].Text;
+                                    var nomeCor = worksheet.Cells[row, 12].Text;
                                     var idCor = query.GetIdByDescricao("cor", "corDESC", "corCOD", nomeCor);
 
                                     var tipoCarroceria = worksheet.Cells[row, 11].Text;
@@ -186,9 +187,9 @@ namespace ReadExcel
                                     novaSolicitacao.Ano_Fab = worksheet.Cells[row, 17].Text;
                                     novaSolicitacao.Ano_Mod = worksheet.Cells[row, 18].Text;
                                     novaSolicitacao.Cap_Passageiros = Convert.ToInt32(worksheet.Cells[row, 19].Text);
-                                    novaSolicitacao.Cap_Carga = Convert.ToDecimal(worksheet.Cells[row, 20].Text);
-                                    novaSolicitacao.Cmt = Convert.ToDecimal(worksheet.Cells[row, 21].Text);
-                                    novaSolicitacao.Pbt = Convert.ToDecimal(worksheet.Cells[row, 22].Text);
+                                    novaSolicitacao.Cap_Carga = decimal.TryParse(worksheet.Cells[row, 20].Text, NumberStyles.Any, new CultureInfo("pt-BR"), out decimal parsedValueCapCarga) ? parsedValueCapCarga : 0.0m;
+                                    novaSolicitacao.Cmt = decimal.TryParse(worksheet.Cells[row, 21].Text, NumberStyles.Any, new CultureInfo("pt-BR"), out var parsedValue) ? parsedValue : 0.0m;
+                                    novaSolicitacao.Pbt = decimal.TryParse(worksheet.Cells[row, 22].Text, NumberStyles.Any, new CultureInfo("pt-BR"), out decimal parsedValuePbt) ? parsedValuePbt : 0.0m;
                                     novaSolicitacao.Observacoes = worksheet.Cells[row, 23].Text;
                                     novaSolicitacao.Responsavel = worksheet.Cells[row, 24].Text;
                                     novaSolicitacao.Telefone = worksheet.Cells[row, 25].Text;

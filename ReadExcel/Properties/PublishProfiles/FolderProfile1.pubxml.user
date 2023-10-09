@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\app.publish\</_PublishTargetUrl>
-    <History>True|2023-10-09T17:46:22.6134679Z;True|2023-10-09T14:37:22.3185022-03:00;True|2023-10-09T14:37:00.5049175-03:00;True|2023-10-09T14:36:11.2874258-03:00;True|2023-10-09T13:38:23.0831062-03:00;</History>
+    <History>True|2023-10-09T19:12:49.5170262Z;True|2023-10-09T15:45:15.8375977-03:00;True|2023-10-09T14:46:22.6134679-03:00;True|2023-10-09T14:37:22.3185022-03:00;True|2023-10-09T14:37:00.5049175-03:00;True|2023-10-09T14:36:11.2874258-03:00;True|2023-10-09T13:38:23.0831062-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Dapper.Contrib.dll">
@@ -30,10 +30,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/10/2021 20:48:48</publishTime>
     </File>
     <File Include="bin/ReadExcel.dll">
-      <publishTime>10/09/2023 14:46:13</publishTime>
+      <publishTime>10/09/2023 16:12:46</publishTime>
     </File>
     <File Include="bin/ReadExcel.pdb">
-      <publishTime>10/09/2023 14:46:13</publishTime>
+      <publishTime>10/09/2023 16:12:46</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>08/08/2018 05:38:48</publishTime>
