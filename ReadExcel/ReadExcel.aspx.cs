@@ -146,6 +146,9 @@ namespace ReadExcel
                                         continue;
                                     }
 
+                                    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("pt-BR");
+                                    System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+
                                     var nomeCor = worksheet.Cells[row, 11].Text;
                                     var idCor = query.GetIdByDescricao("cor", "corDESC", "corCOD", nomeCor);
 
@@ -198,7 +201,7 @@ namespace ReadExcel
                                     novaSolicitacao.tanque_compartimento = null;
                                     novaSolicitacao.tipo_solicitacao = 2;
                                     novaSolicitacao.cod_receita = worksheet.Cells[row, 29].Text;
-                                    novaSolicitacao.data_desembaraco = Convert.ToDateTime(worksheet.Cells[row, 30].Text);
+                                    novaSolicitacao.data_desembaraco = DateTime.ParseExact(worksheet.Cells[row, 30].Text, "dd/MM/yyyy", culture);
                                     novaSolicitacao.num_di = worksheet.Cells[row, 31].Text;
 
                                     int rowsAffected = connection.Execute(insertQuery, novaSolicitacao);
