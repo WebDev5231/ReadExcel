@@ -34,7 +34,6 @@
                 if (parts.length === 2) {
                     var barcodeValue = parts[1].trim();
 
-                    // Verifica se o valor começa com um número
                     if (!isNaN(barcodeValue.charAt(0))) {
                         var barcodeElement = document.createElement("img");
                         barcodeDiv.appendChild(barcodeElement);

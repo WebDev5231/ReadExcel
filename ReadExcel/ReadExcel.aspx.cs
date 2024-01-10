@@ -277,13 +277,28 @@ namespace ReadExcel
                 _connectionString = connectionString;
             }
 
+            //public int GetIdByDescricao(string tableName, string descricaoColumnName, string idColumnName, string descricaoValue)
+            //{
+            //    using (SqlConnection connection = new SqlConnection(_connectionString))
+            //    {
+            //        connection.Open();
+
+            //        string query = $"SELECT {idColumnName} FROM {tableName} WHERE {descricaoColumnName} = @Descricao";
+            //        int id = connection.QuerySingleOrDefault<int>(query, new { Descricao = descricaoValue });
+
+            //        connection.Close();
+
+            //        return id;
+            //    }
+            //}
+
             public int GetIdByDescricao(string tableName, string descricaoColumnName, string idColumnName, string descricaoValue)
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     connection.Open();
 
-                    string query = $"SELECT {idColumnName} FROM {tableName} WHERE {descricaoColumnName} = @Descricao";
+                    string query = $"SELECT {idColumnName} FROM {tableName} WHERE {descricaoColumnName} LIKE '%' + @Descricao + '%'";
                     int id = connection.QuerySingleOrDefault<int>(query, new { Descricao = descricaoValue });
 
                     connection.Close();
@@ -291,6 +306,7 @@ namespace ReadExcel
                     return id;
                 }
             }
+
         }
     }
 }
