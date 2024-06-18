@@ -66,3 +66,4 @@ C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.cs
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.CopyComplete
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.dll
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.pdb
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.AssemblyReference.cache

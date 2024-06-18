@@ -187,9 +187,13 @@ namespace ReadExcel
                                     novaSolicitacao.Ano_Fab = worksheet.Cells[row, 17].Text;
                                     novaSolicitacao.Ano_Mod = worksheet.Cells[row, 18].Text;
                                     novaSolicitacao.Cap_Passageiros = Convert.ToInt32(worksheet.Cells[row, 19].Text);
-                                    novaSolicitacao.Cap_Carga = decimal.TryParse(worksheet.Cells[row, 20].Text, NumberStyles.Any, new CultureInfo("pt-BR"), out decimal parsedValueCapCarga) ? parsedValueCapCarga : 0.0m;
-                                    novaSolicitacao.Cmt = decimal.TryParse(worksheet.Cells[row, 21].Text, NumberStyles.Any, new CultureInfo("pt-BR"), out var parsedValue) ? parsedValue : 0.0m;
-                                    novaSolicitacao.Pbt = decimal.TryParse(worksheet.Cells[row, 22].Text, NumberStyles.Any, new CultureInfo("pt-BR"), out decimal parsedValuePbt) ? parsedValuePbt : 0.0m;
+                                                                      
+
+                                    novaSolicitacao.Cap_Carga = decimal.TryParse(worksheet.Cells[row, 20].Text.Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal parsedValueCapCarga) ? parsedValueCapCarga : 0.0m;
+                                    novaSolicitacao.Cmt = decimal.TryParse(worksheet.Cells[row, 21].Text.Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out var parsedValueCmt) ? parsedValueCmt : 0.0m;
+                                    novaSolicitacao.Pbt = decimal.TryParse(worksheet.Cells[row, 22].Text.Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal parsedValuePbt) ? parsedValuePbt : 0.0m;
+
+
                                     novaSolicitacao.Observacoes = worksheet.Cells[row, 23].Text;
                                     novaSolicitacao.Responsavel = worksheet.Cells[row, 24].Text;
                                     novaSolicitacao.Telefone = worksheet.Cells[row, 25].Text;
@@ -276,21 +280,6 @@ namespace ReadExcel
             {
                 _connectionString = connectionString;
             }
-
-            //public int GetIdByDescricao(string tableName, string descricaoColumnName, string idColumnName, string descricaoValue)
-            //{
-            //    using (SqlConnection connection = new SqlConnection(_connectionString))
-            //    {
-            //        connection.Open();
-
-            //        string query = $"SELECT {idColumnName} FROM {tableName} WHERE {descricaoColumnName} = @Descricao";
-            //        int id = connection.QuerySingleOrDefault<int>(query, new { Descricao = descricaoValue });
-
-            //        connection.Close();
-
-            //        return id;
-            //    }
-            //}
 
             public int GetIdByDescricao(string tableName, string descricaoColumnName, string idColumnName, string descricaoValue)
             {
