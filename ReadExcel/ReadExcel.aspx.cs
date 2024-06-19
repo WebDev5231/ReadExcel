@@ -187,7 +187,7 @@ namespace ReadExcel
                                     novaSolicitacao.Ano_Fab = worksheet.Cells[row, 17].Text;
                                     novaSolicitacao.Ano_Mod = worksheet.Cells[row, 18].Text;
                                     novaSolicitacao.Cap_Passageiros = Convert.ToInt32(worksheet.Cells[row, 19].Text);
-                                                                      
+
 
                                     novaSolicitacao.Cap_Carga = decimal.TryParse(worksheet.Cells[row, 20].Text.Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal parsedValueCapCarga) ? parsedValueCapCarga : 0.0m;
                                     novaSolicitacao.Cmt = decimal.TryParse(worksheet.Cells[row, 21].Text.Replace(",", "."), NumberStyles.Any, CultureInfo.InvariantCulture, out var parsedValueCmt) ? parsedValueCmt : 0.0m;
@@ -272,6 +272,7 @@ namespace ReadExcel
 
             return rowData.ToString();
         }
+
         public class sqlQuery
         {
             private readonly string _connectionString;
