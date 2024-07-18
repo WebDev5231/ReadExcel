@@ -1,8 +1,8 @@
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\roslyn\csc.exe.config
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\ReadExcel.dll.config
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\ReadExcel.dll
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\ReadExcel.pdb
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\roslyn\csc.exe
-C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\roslyn\csc.exe.config
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\roslyn\csc.rsp
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\roslyn\csi.exe
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\roslyn\csi.exe.config
@@ -66,4 +66,3 @@ C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.cs
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.CopyComplete
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.dll
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.pdb
-C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.AssemblyReference.cache

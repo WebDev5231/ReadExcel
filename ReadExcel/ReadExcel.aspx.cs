@@ -8,7 +8,6 @@ using OfficeOpenXml;
 using Dapper;
 using ReadExcel.Models;
 using System.Text;
-using System.Web.UI.WebControls;
 using System.Globalization;
 
 namespace ReadExcel
@@ -90,10 +89,12 @@ namespace ReadExcel
                         }
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", "excelError();", true);
-                    return;
+                    string errorMessage = ex.Message.Replace("'", "\\'");
+                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", $"excelError('{errorMessage}');", true);
+
+                    //ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", "excelError();", true);
                 }
             }
             else
@@ -286,17 +287,32 @@ namespace ReadExcel
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    connection.Open();
+                    descricaoValue = descricaoValue.Trim();
 
                     string query = $"SELECT {idColumnName} FROM {tableName} WHERE {descricaoColumnName} LIKE '%' + @Descricao + '%'";
-                    int id = connection.QuerySingleOrDefault<int>(query, new { Descricao = descricaoValue });
 
-                    connection.Close();
+                    try
+                    {
+                        int id = connection.QuerySingleOrDefault<int>(query, new { Descricao = descricaoValue });
 
-                    return id;
+                        if (id == 0)
+                        {
+                            string errorMessage = $"Nenhum ID encontrado para a descrição '{descricaoValue}' na tabela '{tableName}'";
+                            Console.WriteLine($"Query Executada: {query}; Erro: {errorMessage}");
+                            return 0;
+                        }
+                        else
+                        {
+                            return id;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Erro ao executar consulta: {ex.Message}");
+                        return 0;
+                    }
                 }
             }
-
         }
     }
 }
