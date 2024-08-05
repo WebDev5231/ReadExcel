@@ -93,8 +93,6 @@ namespace ReadExcel
                 {
                     string errorMessage = ex.Message.Replace("'", "\\'");
                     ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", $"excelError('{errorMessage}');", true);
-
-                    //ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", "excelError();", true);
                 }
             }
             else
