@@ -117,11 +117,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbOperacoes.cs" />
+    <Compile Include="getValuesById.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\cor.cs" />
     <Compile Include="Models\solicitacoes.cs" />
+    <Compile Include="nomeCorMapeado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadExcel.aspx.cs">
       <DependentUpon>ReadExcel.aspx</DependentUpon>

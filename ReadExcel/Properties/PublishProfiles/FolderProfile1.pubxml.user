@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\app.publish\</_PublishTargetUrl>
-    <History>True|2024-07-18T14:51:29.6903905Z;True|2024-07-18T11:51:19.5202248-03:00;True|2024-07-18T11:48:00.7083719-03:00;True|2024-06-18T16:01:41.3218909-03:00;True|2023-10-09T16:12:49.5170262-03:00;True|2023-10-09T15:45:15.8375977-03:00;True|2023-10-09T14:46:22.6134679-03:00;True|2023-10-09T14:37:22.3185022-03:00;True|2023-10-09T14:37:00.5049175-03:00;True|2023-10-09T14:36:11.2874258-03:00;True|2023-10-09T13:38:23.0831062-03:00;</History>
+    <History>True|2024-08-15T19:14:28.3613988Z;True|2024-08-15T10:15:29.8254469-03:00;True|2024-07-18T11:51:29.6903905-03:00;True|2024-07-18T11:51:19.5202248-03:00;True|2024-07-18T11:48:00.7083719-03:00;True|2024-06-18T16:01:41.3218909-03:00;True|2023-10-09T16:12:49.5170262-03:00;True|2023-10-09T15:45:15.8375977-03:00;True|2023-10-09T14:46:22.6134679-03:00;True|2023-10-09T14:37:22.3185022-03:00;True|2023-10-09T14:37:00.5049175-03:00;True|2023-10-09T14:36:11.2874258-03:00;True|2023-10-09T13:38:23.0831062-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Dapper.Contrib.dll">
@@ -30,10 +30,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/10/2024 08:10:32</publishTime>
     </File>
     <File Include="bin/ReadExcel.dll">
-      <publishTime>07/18/2024 11:51:25</publishTime>
+      <publishTime>08/15/2024 16:24:16</publishTime>
     </File>
     <File Include="bin/ReadExcel.pdb">
-      <publishTime>07/18/2024 11:51:25</publishTime>
+      <publishTime>08/15/2024 16:24:16</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>01/10/2024 08:10:31</publishTime>
@@ -282,7 +282,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/10/2024 08:10:29</publishTime>
     </File>
     <File Include="ReadExcel.aspx">
-      <publishTime>06/18/2024 14:48:33</publishTime>
+      <publishTime>08/14/2024 09:29:08</publishTime>
     </File>
     <File Include="ReadRow.aspx">
       <publishTime>01/10/2024 08:20:43</publishTime>
@@ -324,7 +324,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/10/2024 08:10:29</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/18/2024 11:51:27</publishTime>
+      <publishTime>08/15/2024 16:25:26</publishTime>
     </File>
   </ItemGroup>
 </Project>

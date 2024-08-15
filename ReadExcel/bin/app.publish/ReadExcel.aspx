@@ -49,13 +49,13 @@
                 <div class="input-group">
                     <asp:FileUpload ID="fileUpload" runat="server" type="file" CssClass="form-control" />
                     <div class="input-group-append">
-                        <asp:Button ID="btnUpload" runat="server" Text="Upload" CssClass="btn btn-primary" OnClick="btnUpload_Click" />
+                        <asp:Button ID="btnUpload" runat="server" Text="Carregar" CssClass="btn btn-primary" OnClick="btnUpload_Click" />
                     </div>
                 </div>
             </div>
             <div class="col-md-5" style="margin-top: 1%;">
                 <div class="d-flex">
-                    <asp:Button ID="btnInsertData" runat="server" Text="Importar Dados" OnClick="btnInsertData_Click" CssClass="btn btn-primary" />
+                    <asp:Button ID="btnInsertData" runat="server" Text="Importar Solicitações" OnClick="btnInsertData_Click" CssClass="btn btn-primary" />
                 </div>
             </div>
         </div>

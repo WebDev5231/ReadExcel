@@ -16,7 +16,7 @@ namespace ReadExcel
 
                 StringBuilder detailsTable = new StringBuilder();
 
-                detailsTable.Append("<table class=\"table table-striped table-hover\">"); // Adicionando as classes aqui
+                detailsTable.Append("<table class=\"table table-striped table-hover\">");
 
                 foreach (string columnValue in columnValues)
                 {
