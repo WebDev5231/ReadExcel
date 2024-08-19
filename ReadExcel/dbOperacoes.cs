@@ -108,16 +108,18 @@ namespace ReadExcel
                                 Ano_Fab = GetValueOrThrow(17, "Ano_Fab"),
                                 Ano_Mod = GetValueOrThrow(18, "Ano_Mod"),
                                 Cap_Passageiros = Convert.ToInt32(GetValueOrThrow(19, "Cap_Passageiros")),
+
                                 Cap_Carga = decimal.TryParse(GetValueOrThrow(20, "Cap_Carga").Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal capCarga) ? capCarga : 0.0m,
                                 Cmt = decimal.TryParse(GetValueOrThrow(21, "Cmt").Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal cmt) ? cmt : 0.0m,
                                 Pbt = decimal.TryParse(GetValueOrThrow(22, "Pbt").Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal pbt) ? pbt : 0.0m,
+                                
                                 Observacoes = null,
                                 Responsavel = GetValueOrThrow(24, "Responsavel"),
                                 Telefone = GetValueOrThrow(25, "Telefone"),
                                 Ramal = null,
                                 Email = GetValueOrThrow(27, "Email"),
                                 Impresso = false,
-                                Mes_Fab = Convert.ToInt32(GetValueOrThrow(28, "Mes_Fab")), 
+                                Mes_Fab = Convert.ToInt32(GetValueOrThrow(28, "Mes_Fab")),
                                 usuario_imprime = null,
                                 cadastrado = false,
                                 tanque_compartimento = null,
@@ -151,6 +153,7 @@ namespace ReadExcel
 
                         transaction.Commit();
                         return totalInserted;
+
                     }
                     catch (Exception ex)
                     {
