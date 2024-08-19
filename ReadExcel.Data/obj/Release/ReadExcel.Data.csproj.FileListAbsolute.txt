@@ -1,0 +1,6 @@
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel.Data\bin\Release\ReadExcel.Data.dll
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel.Data\bin\Release\ReadExcel.Data.pdb
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel.Data\obj\Release\ReadExcel.Data.csproj.AssemblyReference.cache
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel.Data\obj\Release\ReadExcel.Data.csproj.CoreCompileInputs.cache
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel.Data\obj\Release\ReadExcel.Data.dll
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel.Data\obj\Release\ReadExcel.Data.pdb

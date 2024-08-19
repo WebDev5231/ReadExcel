@@ -1,23 +1,18 @@
 ﻿using Dapper;
+using ReadExcel.Data;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace ReadExcel
 {
     public class getValuesById
     {
 
-        string connectionString = ConfigurationManager.ConnectionStrings["MinhaConexao"].ConnectionString;
-
         public int GetIdByDescricao(string tableName, string descricaoColumnName, string idColumnName, string descricaoValue)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(Database.ConnectionString))
             {
-                descricaoValue = NormalizeString(descricaoValue);
+                descricaoValue.Trim().ToUpper();
 
                 string query = $"SELECT {idColumnName} FROM {tableName} WHERE UPPER({descricaoColumnName}) LIKE '%' + @Descricao + '%'";
 
@@ -33,16 +28,12 @@ namespace ReadExcel
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Erro ao executar consulta: {ex.Message}");
-                    return 0;
+                    //Console.WriteLine($"Erro ao executar consulta: {ex.Message}");
+                    //return 0;
+
+                    throw new Exception($"Erro: {ex.Message}");
                 }
             }
         }
-
-        private string NormalizeString(string value)
-        {
-            return value.Trim().ToUpper();
-        }
-
     }
 }

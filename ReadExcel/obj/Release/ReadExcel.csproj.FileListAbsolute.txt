@@ -57,6 +57,8 @@ C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\EPPlus.Interfaces.dl
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\EPPlus.System.Drawing.dll
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\ReadExcel.Data.dll
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\ReadExcel.Data.pdb
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\Dapper.xml
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\Dapper.Contrib.xml
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\EPPlus.xml

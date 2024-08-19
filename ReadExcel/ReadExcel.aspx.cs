@@ -55,7 +55,6 @@ namespace ReadExcel
                                 htmlTable.Append("<th scope='col'>" + columnHeader + "</th>");
                             }
 
-                            htmlTable.Append("<th scope='col'>Ação</th>");
                             htmlTable.Append("</tr>");
                             htmlTable.Append("</thead>");
 
@@ -65,7 +64,6 @@ namespace ReadExcel
                             {
                                 bool isEmptyRow = true;
 
-                                // Verifica se há alguma célula não vazia na linha
                                 for (int col = 1; col <= colCount; col++)
                                 {
                                     if (!string.IsNullOrWhiteSpace(worksheet.Cells[row, col].Text))
@@ -152,7 +150,6 @@ namespace ReadExcel
                 ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", "excelInvalido();", true);
             }
         }
-
 
     }
 }

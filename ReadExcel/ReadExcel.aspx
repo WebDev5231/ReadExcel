@@ -3,19 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Excel em Lote</title>
+    <title>Solicitações em Lote</title>
 
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            var detailsButtons = document.querySelectorAll(".detailsButton");
-            detailsButtons.forEach(function (button) {
-                button.addEventListener("click", function () {
-                    var rowData = button.getAttribute("data-rowdata");
-                    window.open("ReadRow.aspx?data=" + rowData, "_blank");
-                });
-            });
-        });
-
+        
         function excelInvalido() {
             Swal.fire('Atenção', 'Por favor, escolha um arquivo Excel válido.', 'warning');
         }
