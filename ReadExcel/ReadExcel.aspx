@@ -6,7 +6,7 @@
     <title>Solicitações em Lote</title>
 
     <script type="text/javascript">
-        
+
         function excelInvalido() {
             Swal.fire('Atenção', 'Por favor, escolha um arquivo Excel válido.', 'warning');
         }
@@ -26,12 +26,12 @@
         function erroInsert(errorMessage) {
             Swal.fire('Erro', errorMessage, 'error');
         }
-
     </script>
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
     <form id="form1" runat="server">

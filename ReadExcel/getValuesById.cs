@@ -7,12 +7,11 @@ namespace ReadExcel
 {
     public class getValuesById
     {
-
         public int GetIdByDescricao(string tableName, string descricaoColumnName, string idColumnName, string descricaoValue)
         {
             using (SqlConnection connection = new SqlConnection(Database.ConnectionString))
             {
-                descricaoValue.Trim().ToUpper();
+                descricaoValue = descricaoValue.Trim().ToUpper();
 
                 string query = $"SELECT {idColumnName} FROM {tableName} WHERE UPPER({descricaoColumnName}) LIKE '%' + @Descricao + '%'";
 
@@ -22,15 +21,13 @@ namespace ReadExcel
 
                     if (id == 0)
                     {
-                        Console.WriteLine($"Nenhum ID encontrado para a descrição '{descricaoValue}' na tabela '{tableName}'");
+                        throw new Exception($"Nenhum ID encontrado para a descrição '{descricaoValue}' na tabela '{tableName}'");
                     }
+
                     return id;
                 }
                 catch (Exception ex)
                 {
-                    //Console.WriteLine($"Erro ao executar consulta: {ex.Message}");
-                    //return 0;
-
                     throw new Exception($"Erro: {ex.Message}");
                 }
             }

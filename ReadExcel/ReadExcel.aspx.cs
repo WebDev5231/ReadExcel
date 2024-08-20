@@ -38,7 +38,7 @@ namespace ReadExcel
                         {
                             var worksheet = package.Workbook.Worksheets[0];
 
-                            var colCount = worksheet.Dimension.Columns;
+                            var colCount = Math.Min(worksheet.Dimension.Columns, 3001);
                             var rowCount = Math.Min(worksheet.Dimension.Rows, 3001);
 
                             StringBuilder htmlTable = new StringBuilder();
@@ -47,10 +47,8 @@ namespace ReadExcel
                             htmlTable.Append("<thead class='table-dark'>");
                             htmlTable.Append("<tr>");
 
-                            int[] columnWidths = new int[colCount];
                             for (int col = 1; col <= colCount; col++)
                             {
-                                columnWidths[col - 1] = 150;
                                 string columnHeader = worksheet.Cells[1, col].Text;
                                 htmlTable.Append("<th scope='col'>" + columnHeader + "</th>");
                             }
@@ -82,7 +80,7 @@ namespace ReadExcel
                                 for (int col = 1; col <= colCount; col++)
                                 {
                                     string cellValue = worksheet.Cells[row, col].Text;
-                                    htmlTable.Append("<td style='min-width: " + columnWidths[col - 1] + "px;'>" + cellValue + "</td>");
+                                    htmlTable.Append("<td>" + cellValue + "</td>");
                                 }
 
                                 htmlTable.Append("</tr>");
@@ -130,7 +128,7 @@ namespace ReadExcel
 
                             int insertCount = insertOperacoes.insertSolicitacoes(worksheet);
 
-                            string script = $"sucessoImportacao({insertCount});";
+                            string script = $"sucessoImportacao({insertCount});"; 
                             ScriptManager.RegisterStartupScript(this, GetType(), "SuccessAlert", script, true);
                         }
                         catch (Exception ex)
@@ -150,6 +148,5 @@ namespace ReadExcel
                 ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", "excelInvalido();", true);
             }
         }
-
     }
 }

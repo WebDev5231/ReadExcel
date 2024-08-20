@@ -46,9 +46,6 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.Contrib.2.0.78\lib\net461\Dapper.Contrib.dll</HintPath>
-    </Reference>
     <Reference Include="EPPlus, Version=6.2.7.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.6.2.7\lib\net462\EPPlus.dll</HintPath>
     </Reference>
@@ -131,6 +128,7 @@
     <Compile Include="ReadExcel.aspx.designer.cs">
       <DependentUpon>ReadExcel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="solicitacaoFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
