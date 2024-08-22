@@ -128,7 +128,7 @@ namespace ReadExcel
 
                             int insertCount = insertOperacoes.insertSolicitacoes(worksheet);
 
-                            string script = $"sucessoImportacao({insertCount});"; 
+                            string script = $"sucessoImportacao({insertCount});";
                             ScriptManager.RegisterStartupScript(this, GetType(), "SuccessAlert", script, true);
                         }
                         catch (Exception ex)
