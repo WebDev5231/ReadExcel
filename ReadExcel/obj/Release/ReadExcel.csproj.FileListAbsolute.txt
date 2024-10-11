@@ -64,6 +64,6 @@ C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\Microsoft.IO.Recycla
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.AssemblyReference.cache
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.CoreCompileInputs.cache
-C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.CopyComplete
+C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.csproj.Up2Date
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.dll
 C:\Users\vinic.DEV\Documents\GitHub\ReadExcel\ReadExcel\obj\Release\ReadExcel.pdb

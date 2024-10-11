@@ -34,7 +34,16 @@ namespace ReadExcel
             var idCor = _queryGetId.GetIdByDescricao("cor", "corDESC", "corCOD", nomeCor);
 
             var tipoCarroceria = worksheet.Cells[row, 11].Text;
-            var idCarroceria = _queryGetId.GetIdByDescricao("tipocarroceria", "tcDESC", "tcCOD", tipoCarroceria);
+            int idCarroceria;
+
+            if (tipoCarroceria == "ABERTA/CABINE DUPLA")
+            {
+                idCarroceria = 134;
+            }
+            else
+            {
+                idCarroceria = _queryGetId.GetIdByDescricao("tipocarroceria", "tcDESC", "tcCOD", tipoCarroceria);
+            }
 
             var tipoVeiculo = worksheet.Cells[row, 9].Text;
             var idTipoVeiculo = _queryGetId.GetIdByDescricao("tipoveiculo", "tvDESC", "tvCOD", tipoVeiculo);
