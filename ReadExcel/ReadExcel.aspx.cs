@@ -80,6 +80,16 @@ namespace ReadExcel
                                 for (int col = 1; col <= colCount; col++)
                                 {
                                     string cellValue = worksheet.Cells[row, col].Text;
+
+                                    // Verifique se a célula contém uma data e formate corretamente
+                                    if (col == 30) // Substitua '3' pelo índice correto da coluna de data
+                                    {
+                                        if (DateTime.TryParse(cellValue, out DateTime dataDeDesembaraco))
+                                        {
+                                            cellValue = dataDeDesembaraco.ToString("dd/MM/yyyy");
+                                        }
+                                    }
+
                                     htmlTable.Append("<td>" + cellValue + "</td>");
                                 }
 
