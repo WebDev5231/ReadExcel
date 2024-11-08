@@ -36,9 +36,16 @@
 <body>
     <form id="form1" runat="server">
         <div class="row">
-            <div class="col-md-5" style="margin-top: 1%;">
+            <div class="col-md-6" style="margin-top: 1%;">
                 <div class="input-group">
                     <asp:FileUpload ID="fileUpload" runat="server" type="file" CssClass="form-control" />
+
+                    <asp:DropDownList ID="ddlVehicleType" runat="server" CssClass="form-control form-select" Style="margin-left: 5px;">
+                        <asp:ListItem Value="0" Text="SELECIONE O TIPO DE VEICULO"></asp:ListItem>
+                        <asp:ListItem Value="IMPORTADO" Text="IMPORTADO"></asp:ListItem>
+                        <asp:ListItem Value="ONIBUS" Text="ÔNIBUS"></asp:ListItem>
+                    </asp:DropDownList>
+
                     <div class="input-group-append">
                         <asp:Button ID="btnUpload" runat="server" Text="Carregar" CssClass="btn btn-primary" OnClick="btnUpload_Click" />
                     </div>

@@ -82,7 +82,7 @@ namespace ReadExcel
                                     string cellValue = worksheet.Cells[row, col].Text;
 
                                     // Verifique se a célula contém uma data e formate corretamente
-                                    if (col == 30) // Substitua '3' pelo índice correto da coluna de data
+                                    if (col == 30) // Substitua '30' pelo índice correto da coluna de data
                                     {
                                         if (DateTime.TryParse(cellValue, out DateTime dataDeDesembaraco))
                                         {
@@ -123,6 +123,7 @@ namespace ReadExcel
         protected void btnInsertData_Click(object sender, EventArgs e)
         {
             string filePath = ViewState["UploadedFilePath"] as string;
+            string selectedVehicleType = ddlVehicleType.SelectedValue;
 
             if (!string.IsNullOrEmpty(filePath))
             {
@@ -136,7 +137,7 @@ namespace ReadExcel
                         {
                             var insertOperacoes = new dbOperacoes();
 
-                            int insertCount = insertOperacoes.insertSolicitacoes(worksheet);
+                            int insertCount = insertOperacoes.insertSolicitacoes(worksheet, selectedVehicleType);
 
                             string script = $"sucessoImportacao({insertCount});";
                             ScriptManager.RegisterStartupScript(this, GetType(), "SuccessAlert", script, true);

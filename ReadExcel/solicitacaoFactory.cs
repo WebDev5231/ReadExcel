@@ -37,13 +37,15 @@ namespace ReadExcel
             }
         }
 
-        public solicitacoes CriarSolicitacao(ExcelWorksheet worksheet, int row, bool allowNull = false)
+        public solicitacoes CriarSolicitacao(ExcelWorksheet worksheet, int row, string selectedVehicleType)
         {
             try
             {
                 string GetValueOrThrow(int column, string fieldName)
                 {
                     string value = worksheet.Cells[row, column].Text;
+
+                    bool allowNull = false;
                     if (string.IsNullOrWhiteSpace(value) && !allowNull)
                     {
                         throw new Exception($"Erro na linha {row}: '{fieldName}' está vazio.");
@@ -82,6 +84,8 @@ namespace ReadExcel
                 var combustivel = worksheet.Cells[row, 14].Text;
                 var idCombustivel = _queryGetId.GetIdByDescricao("combustivel", "cmbCOMBUST", "cmbCOD", combustivel);
 
+                bool isImportado = selectedVehicleType == "IMPORTADO";
+
                 var solicitacoes = new solicitacoes
                 {
                     Data = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
@@ -118,9 +122,10 @@ namespace ReadExcel
                     usuario_imprime = null,
                     cadastrado = false,
                     tanque_compartimento = null,
-                    tipo_solicitacao = 2,
-                    cod_receita = GetValueOrThrow(29, "cod_receita"),
-                };
+                    tipo_solicitacao = 2
+                };                
+
+                solicitacoes.cod_receita = GetValueOrThrow(29, "cod_receita");
 
                 string dataDesembaracoString = GetValueOrThrow(30, "data_desembaraco");
                 if (DateTime.TryParseExact(dataDesembaracoString, "dd/MM/yyyy", _culture, DateTimeStyles.None, out DateTime dataDesembaraco) ||
@@ -136,6 +141,14 @@ namespace ReadExcel
 
                 solicitacoes.num_di = GetValueOrThrow(31, "num_di");
 
+                if (!isImportado)
+                {
+                    solicitacoes.cod_receita = "0";
+                    solicitacoes.data_desembaraco = DateTime.Now;
+                    solicitacoes.num_di = "0";
+                }
+
+                WriteLog($"Solicitação criada com sucesso para a linha {row}");
 
                 return solicitacoes;
             }

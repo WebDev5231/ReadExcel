@@ -11,7 +11,7 @@ namespace ReadExcel
 {
     public class dbOperacoes
     {
-        internal int insertSolicitacoes(ExcelWorksheet worksheet)
+        internal int insertSolicitacoes(ExcelWorksheet worksheet, string selectedVehicleType)
         {
             var nomeCorMapeamento = new colorMapper();
             var queryGetId = new getValuesById();
@@ -51,7 +51,7 @@ namespace ReadExcel
 
                             try
                             {
-                                var novaSolicitacao = solicitacaoFactory.CriarSolicitacao(worksheet, row);
+                                var novaSolicitacao = solicitacaoFactory.CriarSolicitacao(worksheet, row, selectedVehicleType);
 
                                 int rowsAffected = connection.Execute(insertQuery, novaSolicitacao, transaction: transaction);
 
